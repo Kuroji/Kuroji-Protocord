@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+//option java_outer_classname = "GuildProtos";
+
+import "xyz/usbpc/kuroji/proto/discord/objects/VoiceState.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/Role.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/PresenceUpdate.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/Channel.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/Emoji.proto";
+import "google/protobuf/timestamp.proto";
+
+message Guild {
+    fixed64 id = 1;
+    string name = 2;
+    string icon = 3;
+    string splash = 4;
+    bool owner = 5;
+    fixed64 owner_id = 6;
+    int64 permissions = 7;
+    string region = 8;
+    fixed64 afk_channel_id = 9;
+    int32 afk_timeout = 10;
+    bool embed_enabled = 11;
+    fixed64 embed_channel_id = 12;
+    int32 verification_level = 13;
+    int32 default_message_notifications = 14;
+    int32 explicit_content_filter = 15;
+    repeated Role roles = 16;
+    repeated Emoji emojis = 17;
+    repeated string features = 18;
+    int32 mfa_level = 19;
+    fixed64 application_id = 20;
+    bool widget_enabled = 21;
+    fixed64 widget_channel_id = 22;
+    uint64 system_channel_id = 23;
+    google.protobuf.Timestamp joined_at = 24;
+    bool large = 25;
+    bool unavailable = 26;
+    int32 member_count = 27;
+    repeated VoiceState voice_states = 28;
+    message Member {
+        User user = 1;
+        string nick = 2;
+        repeated fixed64 roles = 3;
+        google.protobuf.Timestamp joined_at = 4;
+        bool deaf = 5;
+        bool mute = 6;
+        fixed64 guild_id = 7;
+    }
+    repeated Member members = 29;
+    repeated Channel channels = 30;
+    repeated PresenceUpdate presences = 31;
+}

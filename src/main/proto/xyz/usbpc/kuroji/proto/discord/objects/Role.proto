@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+
+message Role {
+    fixed64 id = 1;
+    string name = 2;
+    int32 color = 3;
+    bool hoist = 4;
+    int32 position = 5;
+    int64 permissions = 6;
+    bool managed = 7;
+    bool mentionable = 8;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+import "xyz/usbpc/kuroji/proto/discord/objects/Guild.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/Channel.proto";
+
+message Invite {
+    string code = 1;
+    Guild guild = 2;
+    Channel channel = 3;
+}

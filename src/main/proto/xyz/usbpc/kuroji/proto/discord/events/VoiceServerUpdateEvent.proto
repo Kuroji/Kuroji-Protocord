@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.events;
+
+message VoiceServerUpdateEvent {
+    string token = 1;
+    fixed64 guild_id = 2;
+    string endpoint = 3;
+}

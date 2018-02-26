@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+
+//option java_outer_classname = "GuildProtos";
+
+import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
+import "google/protobuf/timestamp.proto";
+
+message Channel {
+    fixed64 id = 1;
+    int32 type = 2;
+    fixed64 guild_id = 3;
+    int32 position = 4;
+
+    message Overwrite {
+        fixed64 id = 1;
+        string type = 2;
+        int64 allow = 3;
+        int64 deny = 4;
+    }
+
+    repeated Overwrite permission_overwrites = 5;
+    string name = 6;
+    string topic = 7;
+    bool nsfw = 8;
+    fixed64 last_message_id = 9;
+    int32 bitrate = 10;
+    int32 user_limit = 11;
+    repeated xyz.usbpc.kuroji.proto.discord.objects.User recipients = 12;
+    string icon = 13;
+    fixed64 owner_id = 14;
+    fixed64 parent_id = 15;
+    fixed64 application_id = 16;
+    google.protobuf.Timestamp last_pin_timestamp = 17;
+}

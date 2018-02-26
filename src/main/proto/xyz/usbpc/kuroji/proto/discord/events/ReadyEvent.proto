@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.events;
+
+import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/Channel.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/Guild.proto";
+
+message ReadyEvent {
+    int32 v = 1;
+    xyz.usbpc.kuroji.proto.discord.objects.User user = 2;
+    repeated xyz.usbpc.kuroji.proto.discord.objects.Channel private_channels = 3;
+    repeated xyz.usbpc.kuroji.proto.discord.objects.Guild guilds = 4;
+    string session_id = 5;
+    repeated string _trace = 7;
+}

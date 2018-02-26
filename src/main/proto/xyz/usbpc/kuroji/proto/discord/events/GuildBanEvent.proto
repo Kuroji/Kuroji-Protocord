@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.events;
+//option java_outer_classname = "GuildProtos";
+
+import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
+
+message GuildBanEvent {
+    xyz.usbpc.kuroji.proto.discord.objects.User user = 1;
+    fixed64 guild_id = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.events;
+
+
+message TypingStartEvent {
+    fixed64 channel_id = 1;
+    fixed64 user_id = 2;
+    int64 timestamp = 3;
+
+}

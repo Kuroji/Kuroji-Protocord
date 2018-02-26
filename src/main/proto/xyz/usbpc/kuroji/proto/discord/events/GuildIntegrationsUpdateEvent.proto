@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.events;
+
+message GuildIntegrationsUpdateEvent {
+    fixed64 guild_id = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+
+import "xyz/usbpc/kuroji/proto/discord/objects/Role.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
+
+message Emoji {
+    fixed64 id = 1;
+    string name = 2;
+    repeated fixed64 roles = 3;
+    User user = 4;
+    bool require_colons = 5;
+    bool managed = 6;
+}

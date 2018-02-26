@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+
+message VoiceRegion {
+    string id = 1;
+    string name = 2;
+    string sample_hostname = 3;
+    int32 sample_port = 4;
+    bool vip = 5;
+    bool optimal = 6;
+    bool deprecated = 7;
+    bool custom = 8;
+}

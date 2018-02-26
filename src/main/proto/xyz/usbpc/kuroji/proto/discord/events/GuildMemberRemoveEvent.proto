@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.events;
+
+import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
+
+message GuildMemberRemoveEvent {
+    fixed64 guild_id = 1;
+    xyz.usbpc.kuroji.proto.discord.objects.User user = 2;
+}

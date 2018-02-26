@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+
+import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
+
+message Webhook {
+    fixed64 id = 1;
+    fixed64 guild_id = 2;
+    fixed64 channel_id = 3;
+    User user = 4;
+    string name = 5;
+    string avatar = 6;
+    string token = 7;
+}

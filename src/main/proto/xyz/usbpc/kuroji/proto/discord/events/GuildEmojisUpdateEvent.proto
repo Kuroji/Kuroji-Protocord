@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.events;
+
+import "xyz/usbpc/kuroji/proto/discord/objects/Emoji.proto";
+
+message GuildEmojisUpdateEvent {
+    fixed64 guild_id = 1;
+    repeated xyz.usbpc.kuroji.proto.discord.objects.Emoji emojis = 2;
+}

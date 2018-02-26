@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.events;
+
+import "google/protobuf/timestamp.proto";
+
+message ChannelPinsUpdateEvent {
+    fixed64 channel_id = 1;
+    google.protobuf.Timestamp last_pin_timestamp = 2;
+
+}

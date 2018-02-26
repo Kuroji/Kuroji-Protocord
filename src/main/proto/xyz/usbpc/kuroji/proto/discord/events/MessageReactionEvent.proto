@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.events;
+
+import "xyz/usbpc/kuroji/proto/discord/objects/Emoji.proto";
+
+message MessageReactionEvent {
+    fixed64 user_id = 1;
+    fixed64 channel_id = 2;
+    fixed64 message_id = 3;
+    xyz.usbpc.kuroji.proto.discord.objects.Emoji emoji = 4;
+}

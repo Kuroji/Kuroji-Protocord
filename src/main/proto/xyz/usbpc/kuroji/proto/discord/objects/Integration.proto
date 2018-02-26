@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+
+import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
+import "google/protobuf/timestamp.proto";
+
+message Integration {
+    fixed64 id = 1;
+    string name = 2;
+    string type = 3;
+    bool enabled = 4;
+    bool syncing = 5;
+    fixed64 role_id = 6;
+    int32 expire_behavior = 7;
+    int32 expire_grace_period = 8;
+    User user = 9;
+    message Account {
+        string id = 1;
+        string name = 2;
+    }
+    Account account = 10;
+    google.protobuf.Timestamp synced_at = 11;
+}

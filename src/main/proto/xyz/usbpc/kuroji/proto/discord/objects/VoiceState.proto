@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+
+message VoiceState {
+    fixed64 guild_id = 1;
+    fixed64 channel_id = 2;
+    fixed64 user_id = 3;
+    string session_id = 4;
+    bool deaf = 5;
+    bool mute = 6;
+    bool self_deaf = 7;
+    bool self_mute = 8;
+    bool suppress = 9;
+    bool self_video = 10;
+}

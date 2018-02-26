@@ -1,0 +1,115 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+
+import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/Emoji.proto";
+import "google/protobuf/timestamp.proto";
+
+message Message {
+    fixed64 id = 1;
+    fixed64 channel_id = 2;
+    User author = 3;
+    string content = 4;
+    google.protobuf.Timestamp timestamp = 5;
+    google.protobuf.Timestamp edited_timestamp = 6;
+    bool tts = 7;
+    bool mention_everyone = 8;
+    repeated User mentions = 9;
+    repeated fixed64 mention_roles = 10;
+
+    message Attachment {
+        fixed64 id = 1;
+        string filename = 2;
+        int32 size = 3;
+        string url = 4;
+        string proxy_url = 5;
+        int32 height = 6;
+        int32 width = 7;
+    }
+
+    repeated Message.Attachment attachments = 11;
+
+    message Embed {
+        string title = 1;
+        string type = 2;
+        string description = 3;
+        string url = 4;
+        google.protobuf.Timestamp timestamp = 5;
+        int32 color = 6;
+
+        message Footer {
+            string text = 1;
+            string icon_url = 2;
+            string proxy_icon_url = 3;
+        }
+
+        Embed.Footer footer = 7;
+
+        message Image {
+            string url = 1;
+            string proxy_url = 2;
+            int32 height = 3;
+            int32 width = 4;
+        }
+
+        Embed.Image image = 8;
+
+        message Thumbnail {
+            string url = 1;
+            string proxy_url = 2;
+            int32 height = 3;
+            int32 width = 4;
+        }
+
+        Embed.Thumbnail thumbnail = 9;
+
+        message Video {
+            string url = 1;
+            int32 height = 2;
+            int32 width = 3;
+        }
+
+        Embed.Video video = 10;
+
+        message Provider {
+            string name = 1;
+            string url = 2;
+        }
+
+        Embed.Provider provider = 11;
+
+        message Author {
+            string name = 1;
+            string url = 2;
+            string icon_url = 3;
+            string proxy_icon_url = 4;
+        }
+
+        Embed.Author author = 12;
+
+        message Field {
+            string name = 1;
+            string value = 2;
+            bool inline = 3;
+        }
+
+        repeated Embed.Field fields = 13;
+    }
+
+    repeated Embed embeds = 12;
+
+
+
+    int32 type = 13;
+    bool pinned = 14;
+    message Reaction {
+        int32 count = 1;
+        bool me = 2;
+        Emoji emoji = 3;
+    }
+
+    repeated Message.Reaction reactions = 15;
+    fixed64 nonce = 16;
+    string webhook_id = 17;
+}

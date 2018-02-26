@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.events;
+
+message MessageDeleteBulkEvent {
+    repeated fixed64 ids = 1;
+    fixed64 channel_id = 2;
+}
