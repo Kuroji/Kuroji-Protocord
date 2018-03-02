@@ -1,5 +1,4 @@
-import com.google.protobuf.Any
-import com.google.protobuf.Message
+/*import com.google.protobuf.Any
 import xyz.usbpc.kuroji.proto.discord.events.*
 import xyz.usbpc.kuroji.proto.discord.objects.*
 
@@ -46,4 +45,4 @@ fun getMessage(eventType: Event.EventType, message: Any) {
         Event.EventType.UNRECOGNIZED -> TODO()
         Event.EventType.UNKNOWN -> TODO()
     }
-}
+}*/
