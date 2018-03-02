@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package xyz.usbpc.kuroji.proto.discord.objects;
+
+message Activity {
+    string name = 1;
+    int32 type = 2;
+    string url = 3;
+    message Timestamps {
+        int64 start = 1;
+        int64 end = 2;
+    }
+    Timestamps timestamps = 4;
+    fixed64 application_id = 5;
+    string details = 6;
+    string state = 7;
+    message Party {
+        repeated int32 size = 1;
+        string id = 2;
+    }
+    Party party = 8;
+    string session_id = 9;
+    message Assets {
+        string small_text = 1;
+        string small_image = 2;
+        string large_text = 3;
+        string large_image = 4;
+    }
+    Assets assets = 10;
+}

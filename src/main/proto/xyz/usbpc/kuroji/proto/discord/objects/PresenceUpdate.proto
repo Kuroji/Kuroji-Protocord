@@ -3,12 +3,12 @@ syntax = "proto3";
 package xyz.usbpc.kuroji.proto.discord.objects;
 
 import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
-import "xyz/usbpc/kuroji/proto/discord/objects/Game.proto";
+import "xyz/usbpc/kuroji/proto/discord/objects/Activity.proto";
 
 message PresenceUpdate {
     xyz.usbpc.kuroji.proto.discord.objects.User user = 1;
     repeated fixed64 roles = 2;
-    Game game = 3;
+    Activity game = 3;
     fixed64 guild_id = 4;
     string status = 5;
     string nick = 6;
