@@ -1,16 +1,17 @@
 syntax = "proto3";
 
 package xyz.usbpc.kuroji.proto.discord.objects;
+import "google/protobuf/wrappers.proto";
 
 message User {
     fixed64 id = 1;
     string username = 2;
     string discriminator = 3;
-    string avatar = 4;
-    bool bot = 5;
-    bool mfa_enabled = 6;
-    bool verified = 7;
-    string email = 8;
+    google.protobuf.StringValue avatar = 4;
+    google.protobuf.BoolValue bot = 5;
+    google.protobuf.BoolValue mfa_enabled = 6;
+    google.protobuf.BoolValue verified = 7;
+    google.protobuf.StringValue email = 8;
     //Added so that guild bans can work easily
-    uint64 guild_id = 9;
+    google.protobuf.Int64Value guild_id = 9;
 }

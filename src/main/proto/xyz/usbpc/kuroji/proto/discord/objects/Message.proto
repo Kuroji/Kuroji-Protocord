@@ -5,6 +5,7 @@ package xyz.usbpc.kuroji.proto.discord.objects;
 import "xyz/usbpc/kuroji/proto/discord/objects/User.proto";
 import "xyz/usbpc/kuroji/proto/discord/objects/Emoji.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
 
 message Message {
     fixed64 id = 1;
@@ -24,8 +25,8 @@ message Message {
         int32 size = 3;
         string url = 4;
         string proxy_url = 5;
-        int32 height = 6;
-        int32 width = 7;
+        google.protobuf.Int32Value height = 6;
+        google.protobuf.Int32Value width = 7;
     }
 
     repeated Message.Attachment attachments = 11;
@@ -110,6 +111,23 @@ message Message {
     }
 
     repeated Message.Reaction reactions = 15;
-    fixed64 nonce = 16;
-    string webhook_id = 17;
+    google.protobuf.Int64Value nonce = 16;
+    google.protobuf.Int64Value webhook_id = 17;
+
+    message Activity {
+        int32 type = 1;
+        google.protobuf.StringValue party_id = 2;
+    }
+
+    Activity activity = 18;
+
+    message Application {
+        fixed64 id = 1;
+        string cover_image = 2;
+        string description = 3;
+        string icon = 4;
+        string name = 5;
+    }
+
+    Application application = 19;
 }
