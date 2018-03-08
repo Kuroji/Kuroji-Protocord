@@ -48,7 +48,7 @@ message Guild {
         google.protobuf.Timestamp joined_at = 4;
         bool deaf = 5;
         bool mute = 6;
-        fixed64 guild_id = 7;
+        google.protobuf.Int64Value guild_id = 7;
     }
     repeated Member members = 29;
     repeated Channel channels = 30;
