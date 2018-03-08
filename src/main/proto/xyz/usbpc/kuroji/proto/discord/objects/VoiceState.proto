@@ -5,7 +5,7 @@ import "google/protobuf/wrappers.proto";
 
 message VoiceState {
     google.protobuf.Int64Value guild_id = 1;
-    fixed64 channel_id = 2;
+    google.protobuf.Int64Value channel_id = 2;
     fixed64 user_id = 3;
     string session_id = 4;
     bool deaf = 5;
